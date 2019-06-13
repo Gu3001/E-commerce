@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tabela Estado</title>
+<title>Tabela Cidade</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -19,39 +19,30 @@
 </head>
 <body>
 
-<h1>Lista de Estados</h1>
+<h1>Lista de Eventos</h1>
 	<div class="btn-group pull-right">
-		<a class="btn btn-sm btn-success" th:href="@{/cadastrarEstado /}" >Adicionar Novo Estado</a>
+		<a class="btn btn-sm btn-success" th:href="@{/adicionarCidade/}" >Adicionar Nova Cidade</a>
 	</div>
-	
-	
 	<table class="table">
-		<thead class="thead-dark">
+		<thread class="thead-dark">
 			<tr>
-				<th>Nome do Estado</th>
-				<th>Sigla do Estado</th>
-				<th>Opções</th>
-
+				<th>Nome da cidade</th>
+				<th>Estado</th>
 			</tr>
-		</thead>
+		</thread>
 		<tbody>
-			<tr th:each="estado : ${estados}">
-
-				<td><span th:text="${estado.nome}"></span></td>
-				<td><span th:text="${estado.sigla}"></span></td>
-			
+			<tr th:each="cidade : ${cidades}">
+				<td><span th:text="${cidade.nome}"></span></td>
+				<td><span th:text="${cidade.estado.nome}"></span></td>
 				<td>
 					<div class="btn-group pull-right">
-						<a class="btn btn-sm btn-primary" th:href="@{/editarEstado/{id}(id=${estado.id})}" >Editar</a>
-			  			<a class="delete btn btn-sm btn-danger" th:href="@{/removerEstado/{id}(id=${estado.id})}">Excluir</a>
+						<a class="btn btn-sm btn-primary" th:href="@{/editarCidade/{id}(id=${cidade.id})}">Editar</a>
+						<a class="delete btn btn-sm btn-danger" th:href="@{/removerCidade/{id}(id=${cidade.id})}">Excluir</a>
 					</div>
 				</td>
-				
-
 			</tr>
 		</tbody>
-	</table>
-	 
+	</table> 
 	
 </body>
 </html>
