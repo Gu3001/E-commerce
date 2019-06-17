@@ -29,8 +29,12 @@
                 <div class="signup-content">
                     <form th:object="${cidade}" th:action="@{/salvarCidade}" method="POST" id="signup-form" class="signup-form">
                         <h2 class="form-title">CADASTRAR CIDADE</h2>
-                       
+                       	
                         
+                        <div class="form-group">
+                         	<input type="text" th:field="*{id}" readOnly="readonly">
+                        </div>
+				 		
 				 		 <div class="form-group">
                          	<input type="text" class="form-input" th:field="*{nome}" placeholder="nome da Cidade">
                         </div>
