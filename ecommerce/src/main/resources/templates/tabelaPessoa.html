@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tabela Pessoa</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>Lista de Pessoas</h1>
+	<div class="btn-group pull-right">
+		<a class="btn btn-sm btn-success" th:href="@{/adicionarPessoa/}" >Adicionar Nova Pessoa</a>
+	</div>
+	<table class="table">
+		<thread class="thead-dark">
+			<tr>
+				<th>Nome da pessoa</th>
+				<th>Telefone</th>
+				<th>Endereço</th>
+				<th>Email</th>
+				<th>Cidade</th>
+				
+			</tr>
+		</thread>
+		<tbody>
+			<tr th:each="pes : ${pessoas}">
+				<td><span th:text="${pes.nome}"></span></td>
+				<td><span th:text="${pes.telefone}"></span></td>
+				<td><span th:text="${pes.endereco}"></span></td>
+				<td><span th:text="${pes.email}"></span></td>
+				<td><span th:text="${pes.cidade.nome}"></span></td>
+				<td>
+					<div class="btn-group pull-right">
+						<a class="btn btn-sm btn-primary" th:href="@{/editarPessoa/{id}(id=${pessoa.id})}">Editar</a>
+						<a class="delete btn btn-sm btn-danger" th:href="@{/removerPessoa/{id}(id=${pessoa.id})}">Excluir</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table> 
+	
+</body>
+</html>

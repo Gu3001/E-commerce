@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Cadastro Cidade</title>
+<title>Cadastro de Pessoa</title>
 <!-- Última versão CSS compilada e minificada -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -27,8 +27,8 @@
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
                 <div class="signup-content">
-                    <form th:object="${cidade}" th:action="@{/salvarCidade}" method="POST" id="signup-form" class="signup-form">
-                        <h2 class="form-title">CADASTRAR CIDADE</h2>
+                    <form th:object="${pessoa}" th:action="@{/salvarPessoa}" method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">CADASTRAR Pessoa</h2>
                        	
                         
                         
@@ -37,20 +37,31 @@
                         </div>
 				 		
 				 		 <div class="form-group">
-                         	<input type="text" class="form-input" th:field="*{nome}" placeholder="nome da Cidade">
+                         	<input type="text" class="form-input" th:field="*{nome}" placeholder="nome do Pessoa">
                         </div>
 				 		
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{telefone}" placeholder="telefone do Pessoa">
+                        </div>
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{endereco}" placeholder="Insira o endereço">
+                        </div>
+				 		
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{email}" placeholder="email da pessoa">
+                        </div>
+				 		
+
 				 		<div class="form-group">
-				 			<label>Estado</label>
+				 			<label>Cidade</label>
 				 			
                          
-                         	<select th:field="*{estado}" class="form-input">
-                         		<option th:each="est: ${estados}" th:value="${est.id}" th:text="${est.nome}"></option>
+                         	<select th:field="*{cidade}" class="form-input">
+                         		<option th:each="cid: ${cidades}" th:value="${cid.id}" th:text="${cid.nome}"></option>
                          	</select>
-                         		
-                         	
-						        
+                         		   
                         </div>
+                        
 				 		
 
                         <div class="form-group">
