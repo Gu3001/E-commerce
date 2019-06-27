@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de Pessoa</title>
+<!-- Última versão CSS compilada e minificada -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Tema opcional -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Última versão JavaScript compilada e minificada -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!-- Font Icon -->
+ <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+ <!-- Main css -->
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+	<div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form th:object="${cliente}" th:action="@{/salvarCliente}" method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">Cadastrar Cliente</h2>
+                       	
+                        
+                        
+                        <div class="form-group">
+                         	<input type="text" th:field="*{id}" readOnly="readonly" class="form-input">
+                        </div>
+				 		
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{nome}" placeholder="nome do cliente">
+                        </div>
+				 		
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{telefone}" placeholder="telefone do cliente">
+                        </div>
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{endereco}" placeholder="endereço do cliente">
+                        </div>
+				 		
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{email}" placeholder="email do cliente">
+                        </div>
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{rg}" placeholder="rg do cliente">
+                        </div>
+				 		 <div class="form-group">
+                         	<input type="text" class="form-input" th:field="*{cpf}" placeholder="cpf do cliente">
+                        </div>
+				 		
+				 		 <div class="form-group">
+				 		 	<label>Data de nascimento</label>
+                         	<input type="date" class="form-input" th:field="*{dtNasc}" placeholder="data de nascimento do Cliente">
+                        </div>
+                        
+                        
+				 		
+
+				 		<div class="form-group">
+				 			<label>Escolha a Cidade</label>
+		
+                         	<select th:field="*{cidade}" class="form-input">
+                         		<option th:each="cid: ${cidades}" th:value="${cid.id}" th:text="${cid.nome}"></option>
+                         	</select>	   
+                        </div>
+                        
+				 		
+
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Enviar"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+	</form>
+		
+	</div>
+	 <!-- JS -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html> 
+	 
