@@ -13,13 +13,13 @@ public class Produto implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 	private String nome;
 	private String qtdest;
 	private String qtdemin;
 	private Double precoVenda;
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 	public void setId(Long id) {

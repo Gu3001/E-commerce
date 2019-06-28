@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 
+
 @Entity
 public class Cliente extends Pessoa implements Serializable{
 	public static final long SerialVersionUID = 1L;

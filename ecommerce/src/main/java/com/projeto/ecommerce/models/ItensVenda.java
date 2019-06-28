@@ -14,7 +14,7 @@ public class ItensVenda implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 	
 	@ManyToOne
 	private Venda venda;
@@ -25,10 +25,10 @@ public class ItensVenda implements Serializable{
 	private Double qtde;
 	private Double valorUnitario;
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public Venda getVenda() {

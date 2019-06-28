@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Tabela Pessoa</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>Lista de Vendas</h1>
+	<div class="btn-group pull-right">
+		<a class="btn btn-sm btn-success" th:href="@{/adicionarVenda/}" >Adicionar Nova Venda</a>
+	</div>
+	<table class="table">
+		<thread class="thead-dark">
+			<tr>
+				<th>DtVenda</th>
+				<th>cliente</th>
+				
+			</tr>
+		</thread>
+		<tbody>
+			<tr th:each="ven : ${vendas}">
+				<td><span th:text="${ven.dtVenda}"></span></td>
+				
+				<td><span th:text="${ven.cliente.nome}"></span></td>
+				<td>
+					<div class="btn-group pull-right">
+						<a class="btn btn-sm btn-primary" th:href="@{/editarVenda/{id}(id=${venda.id})}">Editar</a>
+						<a class="delete btn btn-sm btn-danger" th:href="@{/removerVenda/{id}(id=${venda.id})}">Excluir</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table> 
+	
+</body>
+</html>

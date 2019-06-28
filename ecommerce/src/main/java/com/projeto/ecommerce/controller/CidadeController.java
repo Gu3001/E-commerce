@@ -33,7 +33,7 @@ public class CidadeController {
 	}
 	@GetMapping("/adicionarCidade")
 		public ModelAndView add(Cidade cidade) {
-		ModelAndView mv = new ModelAndView("/cadastrarCidade");
+		ModelAndView mv = new ModelAndView("cadastrarCidade");
 		mv.addObject("cidade",cidade);
 		
 		List<Estado> listaEstado = estadoRepository.findAll();
