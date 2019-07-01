@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tabela ItensVenda</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>Lista de Itens Venda</h1>
+	<div class="btn-group pull-right">
+		<a class="btn btn-sm btn-success" th:href="@{/adicionarItensVenda/}" >Adicionar Itens Vendas</a>
+	</div>
+	<table class="table">
+		<thread class="thead-dark">
+			<tr>
+				<th>quantidade</th>
+				<th>valor unitário</th>
+				<th>venda</th>
+				<th>produto</th>
+				<th>opção</th>
+				
+			</tr>
+		</thread>
+		<tbody>
+			<tr th:each="it : ${itensVendas}">
+				<td><span th:text="${it.qtde}"></span></td>
+				<td><span th:text="${it.valorUnitario}"></span></td>
+				<td><span th:text="${it.venda}"></span></td>
+				<td><span th:text="${it.produto.nome}"></span></td>
+				<td>
+					<div class="btn-group pull-right">
+						<a class="btn btn-sm btn-primary" th:href="@{/editarItensVenda/{id}(id=${it.id})}">Editar </a>
+						<a class="delete btn btn-sm btn-danger" th:href="@{/removerItensVenda/{id}(id=${it.id})}">Excluir</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table> 
+	
+</body>
+</html>

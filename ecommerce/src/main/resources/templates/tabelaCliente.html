@@ -40,18 +40,18 @@
 			</tr>
 		</thread>
 		<tbody>
-			<tr th:each="cli : ${clientes}">
-				<td><span th:text="${cli.id}"></span></td>
-				<td><span th:text="${cli.nome}"></span></td>
-				<td><span th:text="${cli.telefone}"></span></td>
-				<td><span th:text="${cli.endereco}"></span></td>
-				<td><span th:text="${cli.email}"></span></td>
+			<tr th:each="cliente : ${clientes}">
+				<td><span th:text="${cliente.id}"></span></td>
+				<td><span th:text="${cliente.nome}"></span></td>
+				<td><span th:text="${cliente.telefone}"></span></td>
+				<td><span th:text="${cliente.endereco}"></span></td>
+				<td><span th:text="${cliente.email}"></span></td>
 				
-				<td><span th:text="${cli.rg}"></span></td>
-				<td><span th:text="${cli.cpf}"></span></td>
-				<td><span th:text="${cli.dtNasc}"></span></td>
+				<td><span th:text="${cliente.rg}"></span></td>
+				<td><span th:text="${cliente.cpf}"></span></td>
+				<td><span th:text="${cliente.dtNasc}"></span></td>
 				
-				<td><span th:text="${cli.cidade.nome}"></span></td>
+				<td><span th:text="${cliente.cidade.nome}"></span></td>
 				<td>
 					<div class="btn-group pull-right">
 						<a class="btn btn-sm btn-primary" th:href="@{/editarCliente/{id}(id=${cliente.id})}">Editar</a>
